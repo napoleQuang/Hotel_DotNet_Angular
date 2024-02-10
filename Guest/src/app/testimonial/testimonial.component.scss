@@ -1,0 +1,51 @@
+.mySlides.s {
+    display: none;
+    animation: slide linear 0.5s;
+}
+
+.mySlides {
+    animation: slide linear 0.5s;
+}
+
+ @keyframes slide{
+    from{
+        opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+ }
+.button-tes {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container{
+    position: relative;
+    padding: 0;
+    // overflow: hidden;
+}
+
+.btn-left, .btn-right{
+   background-color: transparent;
+   border: none;
+   color: #fff;
+   font-size: 50px;
+   padding: 0;
+   margin: 0;
+   color: #888;
+   transition: all linear 0.3s;
+}
+
+.btn-left:hover , .btn-right:hover{
+    color: #fff;
+}
+
+.mySlides p {
+    min-height: 48px;
+}
+

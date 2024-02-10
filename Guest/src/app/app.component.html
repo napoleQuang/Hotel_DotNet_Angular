@@ -1,0 +1,109 @@
+<div class="container-xxl bg-white p-0">
+    <!-- Header Start -->
+    <div  class="container-fluid bg-dark px-0">
+        <div class="row gx-0">
+            <div class="col-lg-3 bg-dark d-none d-lg-block">
+                <a routerLink="/home" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+                    <h1 class="m-0 text-primary text-uppercase">NEXUS HOTEL</h1>
+                </a>
+            </div>
+            <div class="col-lg-9">
+                
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
+                    <a href="/home" class="navbar-brand d-block d-lg-none">
+                        <h1 class="m-0 text-primary text-uppercase">NEXUS HOTEL</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link">Home</a>
+                            <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">About</a>
+                            <a routerLink="/services" routerLinkActive="active" class="nav-item nav-link">Services</a>
+                            <a routerLink="/room" routerLinkActive="active" class="nav-item nav-link">Rooms</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" [ngClass]="{'nav-link':true, 'dropdown-toggle':true, 'page-drop':true, active:check()} " data-bs-toggle="dropdown" disabled="true">Pages</a>
+                                <div class="dropdown-list rounded-0 m-0">
+                                    <a routerLink="/booking" routerLinkActive="active" class="dropdown-item" >Booking</a>
+                                    <a routerLink="/testimonial" routerLinkActive="active" class="dropdown-item" >Testimonial</a>
+                                </div>
+                            </div>
+                            <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Contact</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+    <router-outlet></router-outlet>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
+        <div class="container pb-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="bg-primary rounded p-4">
+                        <a routerLink="/home"><h1 class="text-white text-uppercase mb-3">NEXUS HOTEL</h1></a>
+                        <p class="text-white mb-0">
+                            Chúng tôi cam kết mang đến cho khách hàng trải nghiệm khách sạn vượt trội. 
+                            Từ không gian đẳng cấp đến dịch vụ tận tâm để mỗi khách hàng cảm nhận được sự khác biệt.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa-solid fa-phone me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                    <div class="row gy-5 g-4">
+                        <div class="col-md-6">
+                            <h6 class="section-title text-start text-primary text-uppercase mb-4">Company</h6>
+                            <a class="btn btn-link"routerLink="/about">About Us</a>
+                            <a class="btn btn-link"routerLink="/contact">Contact Us</a>
+                            <a class="btn btn-link"routerLink="#">Privacy Policy</a>
+                            <a class="btn btn-link"routerLink="#">Terms & Condition</a>
+                            <a class="btn btn-link"routerLink="#">Support</a>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="section-title text-start text-primary text-uppercase mb-4">Services</h6>
+                            <a class="btn btn-link"routerLink="#">Food & Restaurant</a>
+                            <a class="btn btn-link"routerLink="#">Spa & Fitness</a>
+                            <a class="btn btn-link"routerLink="#">Sports & Gaming</a>
+                            <a class="btn btn-link"routerLink="#">Event & Party</a>
+                            <a class="btn btn-link"routerLink="#">GYM & Yoga</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" routerLink="/home">NEXUS HOTEL</a>, All Right Reserved. 
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a routerLink="/home">Home</a>
+                            <a routerLink="#">Cookies</a>
+                            <a routerLink="#">Help</a>
+                            <a routerLink="#">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+</div>
+

@@ -1,0 +1,32 @@
+<div class="header-room">
+  <div class="wrap-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input class="header-search" type="search" name="" placeholder="Nhập tên dịch vụ cần tìm" [(ngModel)]="textSearch" (ngModelChange)="change()">
+  </div>
+  <button type="button" class="header-find" (click)="openAddDialog()">
+    Thêm dịch vụ
+  </button>
+</div>
+<div class="table-room">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Tên dịch vụ</th>
+            <th scope="col">Giá tiền</th>
+            <th scope="col">Mô tả</th>
+            <th scope="col">Sửa</th>
+            <th scope="col">Xóa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of services">
+            <td>{{s.name}}</td>
+            <td>{{s.price}}</td>
+            <td>{{s.description}}</td>
+            <td><i class="fa-solid fa-pen-to-square" (click)="openUpdateDialog(s)"></i></td>
+            <td><i class="fa-solid fa-trash-can" (click)="delete(s.id!)"></i></td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>

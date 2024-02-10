@@ -1,0 +1,4 @@
+.custom-snack-bar {
+  max-width: 300px; /* Điều chỉnh chiều rộng tối đa của SnackBar */
+  min-width: 200px;
+}

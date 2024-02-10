@@ -1,0 +1,238 @@
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url(../../assets/img/carousel-1.jpg);">
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center pb-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Rooms</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Rooms</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Room Start -->
+<div class="container-xxl py-5 mb-100">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title text-center text-primary text-uppercase">Our Rooms</h6>
+            <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Rooms</span></h1>
+        </div>
+        <div class="row g-4">
+            
+            <div *ngFor="let room of roomData ; let i = index" class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img  class="img-fluid" src="../../assets/img/room-{{i}}.jpg" alt="">
+                        <small
+                            class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">${{room.roomType.dailyPrice}}/Night</small>
+                    </div>
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0">{{room.roomType.name}} Suite</h5>
+                        </div>
+                        <div class="d-flex mb-3">
+                           <!-- <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1 Bed</small>
+                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>1
+                                Bath</small>
+                            <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small> -->
+                        </div>
+                        <p class="text-body mb-3">{{room.roomType.description}}</p>
+                        <div class="d-flex justify-content-between">
+                            <!-- <a class="btn btn-sm btn-primary rounded py-2 px-4 view-detail" href="">Xem chi tiết</a> -->
+                            <!-- Button trigger modal -->
+                            <button type="button" [attr.data-bs-target]="'#' + modalId + i" class="btn btn-primary" data-bs-toggle="modal">
+                                Xem chi tiết
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="staticBackdrop{{i}}" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">{{room.roomType.name}} Suite
+                                            </h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div>
+                                                <div>
+                                                    <div class="heading-detail">
+                                                        Thông tin phòng</div>
+                                                    <div class="body-detail"
+                                                        style="align-items: stretch; -webkit-box-align: stretch;">
+                                                        <div style="display: flex;">
+                                                            <svg style="margin-right: 8px;" width="16" height="16"
+                                                                viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                data-id="IcHotelRoomMeasure">
+                                                                <path
+                                                                    d="M12 21H7L21 7V21H18M12 21V20M12 21H15M15 21V20M15 21H18M18 21V20M15 17H17V15"
+                                                                    stroke="#0194F3" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                </path>
+                                                                <path
+                                                                    d="M8 8L9 9M8 8L5 11M8 8L11 5M5 11L6 12M5 11L2 14L5 17L17 5L14 2L11 5M11 5L12 6"
+                                                                    stroke="#03121A" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                </path>
+                                                            </svg>
+                                                            <div></div>
+                                                            <div>
+                                                                {{room.roomType.areaInSquareMeters}} m²
+                                                            </div>
+                                                        </div>
+                                                        <div></div>
+                                                        <!-- <div style="display: flex;">
+                                                            <svg style="margin-right: 8px;"
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24"
+                                                                data-id="IcSystemGuestPassenger">
+                                                                <g fill="none" fill-rule="evenodd">
+                                                                    <rect width="24" height="24"></rect>
+                                                                    <path stroke="#03121A" stroke-linecap="round"
+                                                                        stroke-linejoin="round" stroke-width="2"
+                                                                        d="M2,21 L13,21 L13,19.5 C13,16.4624339 10.5375661,14 7.5,14 L7.5,14 C4.46243388,14 2,16.4624339 2,19.5 L2,21 Z M7,4 L8,4 C9.65685425,4 11,5.34314575 11,7 L11,8.5 C11,10.4329966 9.43299662,12 7.5,12 L7.5,12 C5.56700338,12 4,10.4329966 4,8.5 L4,7 C4,5.34314575 5.34314575,4 7,4 Z">
+                                                                    </path>
+                                                                    <path stroke="#0194F3" stroke-linecap="round"
+                                                                        stroke-linejoin="round" stroke-width="2"
+                                                                        d="M16,19 L22,19 L22,18 C22,14.4624339 19.5581561,12 17,12 C15.6264236,12 14.7600111,12.2294943 14,13 M16,2 L16.3162278,2.9486833 C16.7245699,4.17370972 17.8709864,5 19.1622777,5 L21,5">
+                                                                    </path>
+                                                                    <path stroke="#0194F3" stroke-linecap="round"
+                                                                        stroke-linejoin="round" stroke-width="2"
+                                                                        d="M16,2 L17,2 C18.6568542,2 20,3.34314575 20,5 L20,6.5 C20,8.43299662 18.4329966,10 16.5,10 L16.5,10 C14.5670034,10 13,8.43299662 13,6.5 L13,5 C13,3.34314575 14.3431458,2 16,2 Z">
+                                                                    </path>
+                                                                </g>
+                                                            </svg>
+                                                            <div></div>
+                                                            <div>
+                                                                2 khách</div>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                                <div></div>
+                                                <div>
+                                                    <div class="heading-detail">
+                                                        Tính năng phòng bạn thích</div>
+                                                    <div class="body-detail"
+                                                        style="align-items: stretch; -webkit-box-align: stretch;">
+                                                        <div>
+                                                            <div style="display: flex;">
+                                                                <img importance="low" loading="lazy"
+                                                                    src="https://ik.imagekit.io/tvlk/image/imageResource/2023/07/27/1690451958285-43836c7e0f5321b394371359084fbb6b.png?tr=h-24,q-75,w-24"
+                                                                    srcset="https://ik.imagekit.io/tvlk/image/imageResource/2023/07/27/1690451958285-43836c7e0f5321b394371359084fbb6b.png?tr=h-24,q-75,w-24 1x, https://ik.imagekit.io/tvlk/image/imageResource/2023/07/27/1690451958285-43836c7e0f5321b394371359084fbb6b.png?tr=dpr-2,h-24,q-75,w-24 2x, https://ik.imagekit.io/tvlk/image/imageResource/2023/07/27/1690451958285-43836c7e0f5321b394371359084fbb6b.png?tr=dpr-3,h-24,q-75,w-24 3x"
+                                                                    decoding="async" width="24" height="24"
+                                                                    style="object-fit: fill; object-position: 50% 50%; margin-right: 8px;">
+                                                                <div></div>
+                                                                <div>
+                                                                    Vòi tắm đứng</div>
+                                                            </div>
+                                                        </div>
+                                                        <div style="padding-bottom: 8px;"></div>
+                                                        <div>
+                                                            <div style="display: flex;">
+                                                                <img importance="low" loading="lazy"
+                                                                    src="https://s3-ap-southeast-1.amazonaws.com/cntres-assets-ap-southeast-1-250226768838-cf675839782fd369/imageResource/2018/08/13/1534147303404-6f86a86f6f3621d3c9954aeb5b87aa7a.png"
+                                                                    decoding="async" width="24" height="24"
+                                                                    style="object-fit: fill; object-position: 50% 50%; margin-right: 8px;">
+                                                                <div></div>
+                                                                <div>
+                                                                    Máy lạnh</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div></div>
+                                                <div>
+                                                    <div class="heading-detail">
+                                                        Tiện nghi phòng</div>
+                                                    <ul class="body-detail"
+                                                        style="display: grid; grid-template-columns: repeat(2, minmax(122px, 1fr)); row-gap: 4px; padding-left: 16px; margin: 0px;">
+                                                        <li style="padding-right: 24px;">
+                                                            <div>
+                                                                Máy lạnh</div>
+                                                        </li>
+                                                        <li style="padding-right: 0px;">
+                                                            <div>
+                                                                Nước đóng chai miễn phí</div>
+                                                        </li>
+                                                        <li style="padding-right: 24px;">
+                                                            <div>
+                                                                TV</div>
+                                                        </li>
+                                                        <li style="padding-right: 0px;">
+                                                            <div>
+                                                                Bàn làm việc</div>
+                                                        </li>
+
+                                                    </ul>
+                                                    <div style="max-height: 0px;">
+                                                        <div>
+                                                            <ul
+                                                                style="display: grid; grid-template-columns: repeat(2, minmax(122px, 1fr)); row-gap: 4px; padding-left: 16px; margin: 0px;">
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div></div>
+                                                <div>
+                                                    <div class="heading-detail">
+                                                        Tiện nghi phòng tắm</div>
+                                                    <ul class="body-detail"
+                                                        style="display: grid; grid-template-columns: repeat(2, minmax(122px, 1fr)); row-gap: 4px; padding-left: 16px; margin: 0px;">
+                                                        <li style="padding-right: 24px;">
+                                                            <div>
+                                                                Phòng tắm riêng</div>
+                                                        </li>
+                                                        <li style="padding-right: 0px;">
+                                                            <div>
+                                                                Vòi tắm đứng</div>
+                                                        </li>
+                                                        <li style="padding-right: 24px;">
+                                                            <div>
+                                                                Bộ vệ sinh cá nhân</div>
+                                                        </li>
+                                                        <li style="padding-right: 0px;">
+                                                            <div>
+                                                                Máy sấy tóc</div>
+                                                        </li>
+                                                    </ul>
+                                                    <div style="max-height: 0px;">
+                                                        <div>
+                                                            <ul
+                                                                style="display: grid; grid-template-columns: repeat(2, minmax(122px, 1fr)); row-gap: 4px; padding-left: 16px; margin: 0px;">
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button"
+                                                class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" routerLink="/booking">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    
+        
+        </div>
+    </div>
+</div>
+<!-- Room End -->
+
+<!-- Back to Top -->
+<a routerLink="/room" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

@@ -1,0 +1,21 @@
+<!-- Button đặt phòng -->
+<button type="button" style="margin: 8px 24px;" class="btn btn-primary" (click)="openDialogBook()">
+    Đặt phòng
+</button>
+<div class="container-fluid" *ngFor="let item of reservationsWithNumber; let i = index">
+   
+    <div class="card-checkin">
+        <div class="card-checkin-title fs-3 fw-bold">#00{{i+1}}</div>
+        <div class="card-checkin-text">
+            <p>From: {{item.reservation.startTime | date:'dd/MM/yyyy'}}</p>
+            <p>To: {{item.reservation.endTime | date:'dd/MM/yyyy'}}</p>
+            <p>{{item.number}} room</p>
+            <p>Name: {{item.reservation.guest.fullName}}</p>
+        </div>
+        <div>
+            <button class="btn btn-danger col-2 mx-2" (click)="Cancel(item.reservation.reservationID)">Cancel</button>
+            <button class="btn btn-primary col-2" (click)="openDialogCheckIn(item.reservation.reservationID,item.reservation.guest.id)">View</button>
+        </div>
+    </div>
+   
+</div>

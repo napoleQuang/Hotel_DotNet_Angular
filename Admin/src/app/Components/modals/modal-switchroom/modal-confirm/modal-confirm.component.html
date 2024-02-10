@@ -1,0 +1,15 @@
+<div class="modal-dialog p-5 container">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Đổi phòng</h5>
+            <button type="button" class="btn-close" aria-label="Close" (click)="closeDialog()"></button>
+        </div>
+        <div class="modal-body">
+            Bạn có chắc đổi từ phòng {{this.data.oldRoom.number}} sang phòng {{this.data.newRoom.number}}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary mx-3" (click)="closeDialog()">Quay về</button>
+            <button type="button" class="btn btn-primary" (click)="submit()">Đổi</button>
+        </div>
+    </div>
+</div>

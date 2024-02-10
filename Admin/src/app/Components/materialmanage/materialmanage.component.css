@@ -1,0 +1,30 @@
+.addroom-heading{
+    text-align: center;
+    color: deepskyblue;
+    font-weight: 600;
+}
+
+.addroom-wrap{
+    margin-bottom: 20px;
+}
+.addroom-wrap i{
+    width: 27px;
+}
+
+.addroom-wrap input, select{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid;
+    min-width: 300px;
+}
+
+.addroom-wrap input:focus{
+    border-bottom: 1px solid deepskyblue;
+}
+
+.addroom-body{
+    text-align: center;
+    margin-top: 30px;
+}
+
+

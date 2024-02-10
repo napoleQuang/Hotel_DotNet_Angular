@@ -1,0 +1,82 @@
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 p-0" style="background-image: url(../../assets/img/carousel-1.jpg);">
+        <div class="container-fluid page-header-inner py-5">
+            <div class="container text-center pb-5">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Contact</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center text-uppercase">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5 mb-100">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title text-center text-primary text-uppercase">Contact Us</h6>
+                <h1 class="mb-5"><span class="text-primary text-uppercase">Contact</span> For Any Query</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="row gy-4">
+                        <div class="col-md-4">
+                            <h6 class="section-title text-start text-primary text-uppercase">Booking</h6>
+                            <p><i class="fa fa-envelope-open text-primary me-2"></i>book@example.com</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="section-title text-start text-primary text-uppercase">General</h6>
+                            <p><i class="fa fa-envelope-open text-primary me-2"></i>info@example.com</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="section-title text-start text-primary text-uppercase">Technical</h6>
+                            <p><i class="fa fa-envelope-open text-primary me-2"></i>tech@example.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                    <iframe class="position-relative rounded w-100 h-100"
+                        src="https://www.google.com/maps/embed/v1/place?q=Trường+Đại+học+Sư+phạm+Thành+phố+Hồ+Chí+Minh,+Đường+An+Đường+Vương,+phường+4,+Quận+5,+Thành+phố+Hồ+Chí+Minh,+Việt+Nam&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                        frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+                </div>
+                <div class="col-md-6">
+                    <div class="wow fadeInUp" data-wow-delay="0.2s">
+                        <form [formGroup]="FormContact" (ngSubmit)="onSubmit()">
+                            <div class="row g-3">
+                               
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" placeholder="Your Email" formControlName="email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" style="height: 150px" formControlName="mess"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+       
+    </div>
+    <!-- Contact End -->
+
+    <!-- Back to Top -->
+    <a routerLink="/contact" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

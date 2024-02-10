@@ -1,0 +1,63 @@
+<div class="container-fluid wow fadeInUp mb-200" data-wow-delay="0.1s">
+    <h1 class="text-center title">Bạn đã đặt phòng thành công</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="pb-2">
+                <span class="fw-bolder">Họ tên: </span>
+                <span class="fw-normal">{{hoten}}</span>
+            </div>
+            <div class="pb-2">
+                <span class="fw-bolder">Số điện thoại: </span>
+                <span class="fw-normal">{{sdt}}</span>
+            </div>
+            <div class="pb-2">
+                <span class="fw-bolder">Email: </span>
+                <span class="fw-normal">{{email}}</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="pb-2">
+                <span class="fw-bolder">Check in: </span>
+                <span class="fw-normal">{{checkin}}</span>
+            </div>
+            <div class="pb-2">
+                <span class="fw-bolder">Check out: </span>
+                <span class="fw-normal">{{checkout}}</span>
+            </div>
+        </div>
+        <div class="pb-2">
+            <span class="fw-bolder">Yêu cầu: </span>
+            <span class="fw-normal">{{yeucau}} </span>
+        </div>
+
+        <div class="col-md-12">
+            <table class="mx-auto col-12 table table-bordered border-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">Loại phòng</th>
+
+                        <th scope="col">Số lượng phòng</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let r of mangSoLuongPhong">
+                        <td>{{r.name}}</td>
+
+                        <td>{{r.number}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pt-2">
+            <span class="fw-bolder fst-italic">Lưu ý: </span>
+            <span class="fw-normal fst-italic">Vui lòng chú ý điện thoại, nhân viên sẽ gọi điện để xác nhận</span>
+        </div>
+        <div class="pt-2">
+            <button routerLink="/home" routerLinkActive="active" class="btn btn-primary btn-sm">Trở về trang
+                chủ</button>
+        </div>
+    </div>
+</div>

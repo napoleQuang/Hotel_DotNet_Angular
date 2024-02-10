@@ -1,0 +1,32 @@
+<div class="header-room">
+    <div class="wrap-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input class="header-search" type="search" name="" placeholder="Nhập số phòng cần tìm" [(ngModel)]="textSearch" (ngModelChange)="change()">
+    </div>
+    <button type="button" class="header-find" (click)="openAddDialog()">
+      Thêm phòng
+    </button>
+</div>
+
+<div class="table-room">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Số phòng</th>
+            <th scope="col">Tình trạng</th>
+            <th scope="col">Loại phòng</th>
+            <th scope="col">Sửa</th>
+            <th scope="col">Xóa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of rooms">
+            <td>{{r.roomNumber}}</td>
+            <td>{{r.isAvailable?"Trống":"Có khách"}}</td>
+            <td>{{r.roomType!.name}}</td>
+            <td><i class="fa-solid fa-pen-to-square" (click)="openUpdateDialog(r)"></i></td>
+            <td><i class="fa-solid fa-trash-can" (click)="delete(r.id!)"></i></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
